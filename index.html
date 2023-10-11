@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+
+
+<script>
+let items={
+	
+	foodName:['pizza','chicken','Dosa'],
+	
+	
+	deliveryTime:[20,15,23,45,64]
+	
+	
+}
+
+
+
+
+let shop=true;
+
+
+	
+
+
+
+ function ans(min){
+	 
+	 return new Promise((resolve,reject)=>{
+		 
+	 
+	 
+	 if(shop){
+		
+		
+        setTimeout(resolve,min)		
+		 
+	 }
+	 else{
+		 
+		 reject(`Shop  was closed`)
+		 
+	 }
+	})
+	 
+ }
+
+
+
+async function result(){
+	try{
+		
+		await ans(1000);
+		document.write('<br>')
+		document.write(`Your order success`)
+		
+		
+		await ans(3000);
+		document.write('<br>')
+		document.write(`your order is : ${items.foodName[0]}`)
+		
+		
+		await ans(2000);
+		document.write('<br>')
+		document.write(`Your Order was Prepare`)
+		
+		await ans(3000);
+		document.write('<br>')
+		document.write(`your order deliveried in ${items.deliveryTime[3]} Min`)
+		
+		await ans(4000);
+		document.write('<br>')
+		document.write(`your order is deliveried`)
+		
+		
+	}
+	catch(err){
+		
+		document.write(err`coustemer left`)
+	}
+	
+	
+	
+}
+result()
+
+
+</script>
+</body>
+</html>
